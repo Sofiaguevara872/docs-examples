@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuesta VBalance</title>
+<meta name="description" content="Plan de crecimiento para VBalance Calisthenics: contenido, landing, SEO local y estructura de creativos para Meta Ads (Andromeda).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05070c;
+    --bg-2:#0a0f19;
+    --surface:#0e1522;
+    --surface-2:#131c2c;
+    --line:#1d2840;
+    --text:#eef2f8;
+    --muted:#93a0b6;
+    --blue:#1f6bff;
+    --blue-2:#4aa3ff;
+    --blue-soft:rgba(31,107,255,.14);
+    --ok:#3fd18b;
+    --warn:#ffb547;
+    --radius:14px;
+    --display:"Barlow Condensed", "Arial Narrow", sans-serif;
+    --body:"Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+  a{color:var(--blue-2)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+  h1,h2,h3,h4{font-family:var(--display);text-transform:uppercase;letter-spacing:.01em;line-height:1.02;margin:0}
+  h2{font-size:clamp(34px,5vw,54px)}
+  h3{font-size:clamp(24px,3vw,30px)}
+  h4{font-size:20px}
+  p{margin:0 0 12px}
+  .muted{color:var(--muted)}
+  .eyebrow{font:600 12px/1 var(--body);letter-spacing:.18em;text-transform:uppercase;color:var(--blue-2);margin-bottom:14px;display:block}
+  section{padding:84px 0;border-top:1px solid var(--line)}
+  .lead{font-size:18px;color:var(--muted);max-width:720px;margin-top:16px}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:20;background:rgba(5,7,12,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:60px}
+  .nav ul{display:flex;gap:20px;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+  .nav ul::-webkit-scrollbar{display:none}
+  .nav a{color:var(--muted);text-decoration:none;font-size:13px;font-weight:500;white-space:nowrap}
+  .nav a:hover{color:var(--text)}
+  .logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;flex-shrink:0}
+  .logo svg{display:block}
+  .logo b{font:800 20px/1 var(--display);letter-spacing:.06em}
+  .logo b span{color:var(--blue-2)}
+  @media (max-width:760px){.nav ul{display:none}}
+
+  /* hero */
+  .hero{position:relative;padding:96px 0 84px;overflow:hidden;border-top:0}
+  .hero::before{content:"";position:absolute;inset:-30% -10% auto auto;width:720px;height:720px;background:radial-gradient(closest-side,rgba(31,107,255,.35),transparent 70%);pointer-events:none}
+  .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent)}
+  .hero h1{font-size:clamp(48px,9vw,112px);max-width:900px}
+  .hero h1 em{font-style:normal;color:var(--blue-2)}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;color:var(--muted);font-size:14px}
+  .hero .meta strong{color:var(--text);display:block;font-size:15px}
+  .hero-logo{margin-bottom:36px}
+
+  /* grids & cards */
+  .grid{display:grid;gap:16px}
+  .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  @media (max-width:900px){.g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:620px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+  .card h4{margin-bottom:10px}
+  .card ul{margin:0;padding-left:18px;color:var(--muted)}
+  .card li{margin:4px 0}
+  .card li strong{color:var(--text)}
+  .num{font:800 44px/1 var(--display);color:var(--blue-2)}
+  .tag{display:inline-block;font:600 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;padding:6px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--bg-2)}
+  .tag.blue{color:#fff;background:var(--blue);border-color:var(--blue)}
+  .tag.warn{color:var(--warn);border-color:rgba(255,181,71,.4)}
+  .mt{margin-top:40px}
+  .mt-s{margin-top:20px}
+
+  /* pillars */
+  .pillar{position:relative;padding-top:26px}
+  .pillar .idx{position:absolute;top:18px;right:20px;font:800 54px/1 var(--display);color:var(--surface-2)}
+
+  /* prices */
+  .price-table{width:100%;border-collapse:collapse;font-size:15px}
+  .price-table td{padding:10px 0;border-bottom:1px solid var(--line)}
+  .price-table td:last-child{text-align:right;font-weight:600}
+  .price-table tr:last-child td{border-bottom:0}
+  .price-table small{color:var(--muted);font-weight:400}
+
+  /* callout */
+  .callout{border:1px solid rgba(74,163,255,.35);background:linear-gradient(135deg,rgba(31,107,255,.14),rgba(31,107,255,.03));border-radius:var(--radius);padding:22px 24px}
+  .callout.warn{border-color:rgba(255,181,71,.35);background:linear-gradient(135deg,rgba(255,181,71,.10),rgba(255,181,71,.02))}
+  .callout h4{margin-bottom:8px}
+  .callout ul{margin:6px 0 0;padding-left:18px;color:var(--muted)}
+
+  /* structure diagram */
+  .struct{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  @media (max-width:760px){.struct{grid-template-columns:1fr}}
+  .camp{border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);overflow:hidden}
+  .camp-head{padding:16px 20px;background:var(--surface-2);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}
+  .camp-head h4{margin:0}
+  .camp-body{padding:18px 20px}
+  .camp-body dl{display:grid;grid-template-columns:120px 1fr;gap:8px 12px;margin:0;font-size:14px}
+  .camp-body dt{color:var(--muted)}
+  .camp-body dd{margin:0}
+  code{overflow-wrap:anywhere}
+  .bar{height:8px;border-radius:99px;background:var(--bg-2);overflow:hidden;margin-top:6px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--blue-2))}
+
+  /* personas */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:28px 0}
+  .filters button{font:600 13px/1 var(--body);padding:10px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+  .filters button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+  .persona{border:1px solid var(--line);border-radius:18px;background:var(--bg-2);margin-bottom:28px;overflow:hidden}
+  .persona-head{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:26px;background:linear-gradient(135deg,var(--surface-2),var(--bg-2));border-bottom:1px solid var(--line)}
+  .avatar{width:64px;height:64px;border-radius:16px;background:var(--blue);display:grid;place-items:center;font:800 28px/1 var(--display);color:#fff}
+  .persona-head h3{margin-bottom:6px}
+  .persona-head .tags{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+  .pfields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;font-size:14px}
+  .pfields b{display:block;font:600 11px/1.4 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--blue-2);margin-bottom:4px}
+  .pfields span{color:var(--muted)}
+  @media (max-width:760px){.pfields{grid-template-columns:1fr}.persona-head{grid-template-columns:1fr}}
+  .pain{padding:24px 26px;border-top:1px solid var(--line)}
+  .pain:first-of-type{border-top:0}
+  .pain-title{display:flex;gap:12px;align-items:baseline;margin-bottom:6px;flex-wrap:wrap}
+  .pain-title .code{font:700 13px/1 var(--body);color:var(--blue-2);letter-spacing:.06em}
+  .pain-title h4{font-size:22px}
+  .pain .desire{font-size:14px;color:var(--muted);margin-bottom:16px}
+  .pain .desire strong{color:var(--text)}
+  .creatives{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  @media (max-width:900px){.creatives{grid-template-columns:1fr}}
+  .cr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+  .cr-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .cr-top strong{font:800 18px/1 var(--display);letter-spacing:.04em}
+  .cr .row b{display:block;font:600 10.5px/1.4 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+  .cr .hook{font-weight:600;color:var(--text)}
+  .cr .cta{margin-top:auto;padding-top:10px;border-top:1px dashed var(--line);color:var(--blue-2);font-weight:600}
+  .fmt-video{background:var(--blue);border-color:var(--blue);color:#fff}
+  .fmt-imagen{color:#9fd0ff;border-color:rgba(74,163,255,.5)}
+  .fmt-carrusel{color:#c3b6ff;border-color:rgba(160,140,255,.5)}
+  .fmt-ugc{color:var(--ok);border-color:rgba(63,209,139,.5)}
+
+  /* table */
+  .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+  table.map{width:100%;border-collapse:collapse;font-size:13.5px;min-width:820px}
+  table.map th{position:sticky;top:0;background:var(--surface-2);text-align:left;font:600 11px/1.3 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:12px 14px;border-bottom:1px solid var(--line)}
+  table.map td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  table.map tr:last-child td{border-bottom:0}
+  table.map td.id{font-weight:700;color:var(--blue-2);white-space:nowrap}
+  table.map td.code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted);white-space:nowrap}
+  .counts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0}
+  @media (max-width:620px){.counts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .counts .card{padding:16px}
+  .counts .num{font-size:36px}
+
+  /* timeline */
+  .tl{list-style:none;margin:0;padding:0;position:relative}
+  .tl::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:2px;background:var(--line)}
+  .tl li{position:relative;padding:0 0 26px 44px}
+  .tl li::before{content:"";position:absolute;left:4px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--blue)}
+  .tl h4{margin-bottom:6px}
+  .tl p{color:var(--muted);margin:0}
+
+  footer{padding:56px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+
+  @media print{
+    .nav,.filters{display:none}
+    body{background:#05070c;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    section{padding:40px 0;break-inside:avoid-page}
+    .persona,.cr,.card{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGO: reemplazar este SVG por el logo oficial de VBalance (<img src="logo-vbalance.svg" height="34" alt="VBalance">) cuando lo tengamos -->
+<template id="logo-mark">
+  <svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="1" y="1" width="38" height="38" rx="10" fill="#0e1522" stroke="#1f6bff" stroke-width="2"/>
+    <path d="M10 11 L20 30 L30 11" fill="none" stroke="#4aa3ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="8" y1="11" x2="32" y2="11" stroke="#eef2f8" stroke-width="2.5" stroke-linecap="round"/>
+  </svg>
+</template>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="logo-slot"></span><b>V<span>BALANCE</span></b></a>
+    <ul>
+      <li><a href="#diagnostico">Diagnóstico</a></li>
+      <li><a href="#plan">Plan</a></li>
+      <li><a href="#contenido">Contenido</a></li>
+      <li><a href="#landing">Landing &amp; SEO</a></li>
+      <li><a href="#ads">Meta Ads</a></li>
+      <li><a href="#personas">Creativos</a></li>
+      <li><a href="#mapa">Mapa de producción</a></li>
+      <li><a href="#etapas">Etapas</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-logo logo"><span class="logo-slot big"></span><b style="font-size:28px">V<span>BALANCE</span> <span style="color:var(--muted);font-weight:600;letter-spacing:.2em;font-size:16px">CALISTHENICS</span></b></div>
+    <span class="eyebrow">Propuesta de crecimiento · Octubre 2026</span>
+    <h1>Más alumnos para la <em>comunidad</em> VBalance</h1>
+    <p class="lead">Un plan integral para llenar los grupos de <strong>Los Robles del Monarca</strong> y sumar personalizados en <strong>El Recodo</strong>: contenido trimestral, una landing que convierta, SEO local y una estructura de creativos para Meta Ads pensada para el algoritmo Andromeda.</p>
+    <div class="meta">
+      <div><strong>Para</strong>Emi Solís — VBalance Calisthenics</div>
+      <div><strong>Preparado por</strong>Sofi Audiovisual · foto, video y sitios web</div>
+      <div><strong>Objetivo</strong>Atraer alumnos nuevos todos los meses</div>
+    </div>
+  </div>
+</header>
+
+<!-- DIAGNÓSTICO -->
+<section id="diagnostico">
+  <div class="wrap">
+    <span class="eyebrow">01 · Punto de partida</span>
+    <h2>Dónde estamos hoy</h2>
+    <p class="lead">VBalance tiene lo más difícil de conseguir: un método, un coach presente y una comunidad que entrena junta. Lo que falta es que la gente correcta se entere y que, cuando se entera, le resulte fácil dar el primer paso.</p>
+
+    <div class="grid g2 mt">
+      <div class="card">
+        <h4>Prioridad de sedes</h4>
+        <ul>
+          <li><strong>1 · Los Robles del Monarca — grupal.</strong> Es adonde queremos llevar a la mayoría: escala, comunidad y mejor relación precio/valor para el alumno.</li>
+          <li><strong>2 · El Recodo — semipersonalizado / personalizado.</strong> Cupos chicos y ticket alto por clase.</li>
+          <li><strong>Galápagos y la otra sede — sin pauta.</strong> Aparecen en la web, pero no se promocionan: no se pueden sumar alumnos de afuera del barrio.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Precios actuales</h4>
+        <table class="price-table">
+          <tr><td>Los Robles · grupal 1x semana</td><td>$40.000 <small>/mes</small></td></tr>
+          <tr><td>Los Robles · grupal 2x semana</td><td>$60.000 <small>/mes</small></td></tr>
+          <tr><td>Los Robles · grupal 3x semana</td><td>$75.000 <small>/mes</small></td></tr>
+          <tr><td>El Recodo · 1x / 2x / 3x semana</td><td>$15k / $14k / $13k <small>/clase</small></td></tr>
+          <tr><td>Galápagos</td><td>$12.000 <small>/clase</small></td></tr>
+        </table>
+        <p class="muted mt-s" style="font-size:13px;margin:12px 0 0">Semipersonalizado y personalizado incluyen rutina.</p>
+      </div>
+    </div>
+
+    <div class="grid g3 mt-s">
+      <div class="card"><div class="num">~$6.250</div><p class="muted" style="margin:6px 0 0">Costo por clase en el grupal 3x semana. Contra los $13.000–15.000 del personalizado, es el argumento de precio más fuerte de los anuncios.</p></div>
+      <div class="card"><div class="num">4</div><p class="muted" style="margin:6px 0 0">Frentes que hoy trabajan por separado (o no se trabajan): Instagram, web, Google y pauta. El plan los conecta.</p></div>
+      <div class="card"><div class="num">1</div><p class="muted" style="margin:6px 0 0">Acción que tiene que facilitar todo el sistema: <strong style="color:var(--text)">escribir por WhatsApp para reservar una clase de prueba</strong>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section id="plan">
+  <div class="wrap">
+    <span class="eyebrow">02 · El plan</span>
+    <h2>4 pilares, un solo embudo</h2>
+    <p class="lead">El contenido alimenta los anuncios, los anuncios llevan a WhatsApp o a la landing, y la landing más el SEO capturan a quien busca en Google. Cada pieza empuja a la siguiente.</p>
+    <div class="grid g4 mt">
+      <div class="card pillar"><span class="idx">01</span><span class="tag blue">Contenido</span><h4 class="mt-s">Grabación trimestral</h4><p class="muted">Una jornada de producción cada 3 meses que deja material para todo el trimestre: orgánico y anuncios.</p></div>
+      <div class="card pillar"><span class="idx">02</span><span class="tag blue">Web</span><h4 class="mt-s">Landing nueva</h4><p class="muted">Una página rápida, clara y pensada para el celular, con un solo objetivo: que reserven la clase de prueba.</p></div>
+      <div class="card pillar"><span class="idx">03</span><span class="tag blue">Google</span><h4 class="mt-s">SEO local</h4><p class="muted">Aparecer cuando alguien de la zona busca "calistenia", "entrenador personal" o "entrenamiento funcional".</p></div>
+      <div class="card pillar"><span class="idx">04</span><span class="tag blue">Pauta</span><h4 class="mt-s">Meta Ads</h4><p class="muted">36 creativos para 5 perfiles de alumno. El creativo hace de segmentación: le dice a Meta a quién mostrárselo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENIDO -->
+<section id="contenido">
+  <div class="wrap">
+    <span class="eyebrow">03 · Pilar 1</span>
+    <h2>Contenido para Instagram</h2>
+    <p class="lead">Una jornada de grabación por trimestre, planificada con el mapa de producción de esta propuesta. Así cada toma tiene un destino: un anuncio, un reel o una historia.</p>
+
+    <div class="grid g3 mt">
+      <div class="card">
+        <h4>Qué se graba en cada jornada</h4>
+        <ul>
+          <li><strong>Clase grupal en Los Robles</strong>: ambiente, comunidad, atardecer.</li>
+          <li><strong>Sesión personalizada en El Recodo</strong>: el coach corrigiendo de cerca.</li>
+          <li><strong>3–5 testimonios</strong> de alumnos reales a cámara (formato UGC).</li>
+          <li><strong>Progresiones</strong>: primera dominada, vertical, muscle up.</li>
+          <li><strong>Emi explicando</strong>: tips cortos para el contenido educativo.</li>
+          <li><strong>Fotos</strong> para carruseles, anuncios de imagen y la web.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Entregables por trimestre</h4>
+        <ul>
+          <li><strong>12–15 reels</strong> editados (9:16, con subtítulos).</li>
+          <li><strong>8–10 piezas UGC</strong> estilo celular, para anuncios.</li>
+          <li><strong>6 carruseles</strong> diseñados (4:5).</li>
+          <li><strong>40+ fotos</strong> editadas.</li>
+          <li><strong>Banco de clips</strong> para historias.</li>
+        </ul>
+        <p class="muted mt-s" style="font-size:13px">Cantidades a ajustar según el paquete elegido.</p>
+      </div>
+      <div class="card">
+        <h4>Pilares del perfil</h4>
+        <ul>
+          <li><strong>35% Comunidad</strong>: el grupo, la energía, los logros.</li>
+          <li><strong>25% Educativo</strong>: técnica, progresiones, mitos.</li>
+          <li><strong>20% Transformación</strong>: antes y después, primeras veces.</li>
+          <li><strong>20% Conversión</strong>: horarios, precios, clase de prueba.</li>
+        </ul>
+        <p class="muted mt-s" style="font-size:13px">Frecuencia sugerida: 3 reels + 1 carrusel por semana, e historias diarias que muestren las clases.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LANDING + SEO -->
+<section id="landing">
+  <div class="wrap">
+    <span class="eyebrow">04 · Pilares 2 y 3</span>
+    <h2>Landing que convierte + SEO local</h2>
+    <div class="grid g2 mt">
+      <div class="card">
+        <h4>Estructura de la nueva landing</h4>
+        <ol style="margin:0;padding-left:20px;color:var(--muted)">
+          <li><strong style="color:var(--text)">Hero</strong>: video de la clase grupal + "Calistenia en Los Robles del Monarca. Empezá desde cero." + botón de WhatsApp.</li>
+          <li><strong style="color:var(--text)">¿Para quién es?</strong> Tarjetas para cada perfil (desde cero, mujeres, skills, +45, personalizado).</li>
+          <li><strong style="color:var(--text)">Cómo funciona</strong>: clase de prueba → plan → progresión.</li>
+          <li><strong style="color:var(--text)">Sedes y horarios</strong>: Los Robles como protagonista y El Recodo como opción personalizada. Las sedes de barrio cerrado van como "solo para residentes".</li>
+          <li><strong style="color:var(--text)">Precios claros</strong>, mostrando el costo por clase.</li>
+          <li><strong style="color:var(--text)">Testimonios</strong> en video.</li>
+          <li><strong style="color:var(--text)">Sobre Emi</strong>: trayectoria y método.</li>
+          <li><strong style="color:var(--text)">Preguntas frecuentes</strong>: "¿necesito experiencia?", "¿qué llevo?", "¿y si llueve?".</li>
+          <li><strong style="color:var(--text)">Botón de WhatsApp fijo</strong> en el celular.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h4>SEO local</h4>
+        <ul>
+          <li><strong>Google Business Profile</strong> completo: categorías, fotos, horarios y reseñas de alumnos (meta: 20+ en 90 días).</li>
+          <li><strong>Palabras clave</strong>: "calistenia Los Robles del Monarca", "clases de calistenia cerca", "entrenador personal El Recodo", "entrenamiento funcional al aire libre".</li>
+          <li><strong>Una página por sede</strong>, con dirección, mapa y horarios.</li>
+          <li><strong>SEO técnico</strong>: title y meta description por página, un H1 claro, datos estructurados (LocalBusiness / SportsActivityLocation) y texto alternativo en las imágenes.</li>
+          <li><strong>Velocidad</strong>: imágenes optimizadas y sitio estático en Vercel (carga en menos de 2 s en el celular).</li>
+          <li><strong>Contenido evergreen</strong>: FAQ y artículos cortos ("Calistenia para principiantes", "Primera dominada").</li>
+          <li><strong>Medición</strong>: Search Console, GA4, Pixel de Meta + API de Conversiones, y clics a WhatsApp registrados como evento.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- META ADS -->
+<section id="ads">
+  <div class="wrap">
+    <span class="eyebrow">05 · Pilar 4</span>
+    <h2>Meta Ads con lógica Andromeda</h2>
+    <p class="lead">Andromeda, el sistema de recuperación de anuncios de Meta, ya no necesita que le digamos a quién mostrar cada aviso: lo deduce del creativo. Si el anuncio muestra a una mujer de 30 logrando su primera dominada, Meta busca a mujeres que se identifican con eso. <strong style="color:var(--text)">El creativo es la segmentación.</strong></p>
+
+    <div class="grid g3 mt">
+      <div class="card"><h4>1 · Estructura simple</h4><p class="muted">Pocas campañas, públicos amplios (Advantage+) y solo un radio geográfico. Así el algoritmo tiene volumen de datos para aprender.</p></div>
+      <div class="card"><h4>2 · Diversidad real</h4><p class="muted">Meta agrupa los anuncios parecidos y los trata como si fueran uno. Por eso cada creativo cambia de persona, lugar, formato y primer frame, no solo el texto.</p></div>
+      <div class="card"><h4>3 · Señal en 3 segundos</h4><p class="muted">El perfil tiene que reconocerse en el hook: quién aparece, qué dice el texto en pantalla ("Si trabajás 9 horas sentado…") y qué problema se muestra.</p></div>
+    </div>
+
+    <h3 class="mt">Estructura de campañas</h3>
+    <div class="struct mt-s">
+      <div class="camp">
+        <div class="camp-head"><h4>Campaña A · Grupal Los Robles</h4><span class="tag blue">70% del presupuesto</span></div>
+        <div class="camp-body">
+          <dl>
+            <dt>Objetivo</dt><dd>Mensajes de WhatsApp (o Leads hacia la landing)</dd>
+            <dt>Conjunto</dt><dd>1 solo conjunto amplio, Advantage+ audience</dd>
+            <dt>Geo</dt><dd>Radio de ~8–10 km alrededor de Los Robles</dd>
+            <dt>Edad</dt><dd>18–65 (el creativo filtra)</dd>
+            <dt>Creativos</dt><dd>Perfiles P1, P2 y P3 · 24 piezas en 3 olas</dd>
+          </dl>
+          <div class="bar"><i style="width:70%"></i></div>
+        </div>
+      </div>
+      <div class="camp">
+        <div class="camp-head"><h4>Campaña B · Personalizado El Recodo</h4><span class="tag">30% del presupuesto</span></div>
+        <div class="camp-body">
+          <dl>
+            <dt>Objetivo</dt><dd>Mensajes de WhatsApp</dd>
+            <dt>Conjunto</dt><dd>1 solo conjunto amplio, Advantage+ audience</dd>
+            <dt>Geo</dt><dd>Radio de ~5–8 km alrededor de El Recodo</dd>
+            <dt>Edad</dt><dd>30–65</dd>
+            <dt>Creativos</dt><dd>Perfiles P4 y P5 · 12 piezas en 2 olas</dd>
+          </dl>
+          <div class="bar"><i style="width:30%"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid g3 mt-s">
+      <div class="card">
+        <h4>Lanzamiento por olas</h4>
+        <ul>
+          <li><strong>Ola 1 (semana 1)</strong>: 1 creativo por dolor = 12 anuncios.</li>
+          <li><strong>Ola 2 (semana 3)</strong>: los 12 siguientes, priorizando los dolores que mejor respondieron.</li>
+          <li><strong>Ola 3 (semana 5)</strong>: los últimos 12 y variantes de los ganadores.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Reglas de optimización</h4>
+        <ul>
+          <li>No tocar nada en los primeros 5–7 días (fase de aprendizaje).</li>
+          <li>Apagar un anuncio cuando gastó 2–3 veces el costo por conversación objetivo sin generar ninguna.</li>
+          <li>Escalar el presupuesto de a 20% cada 3–4 días.</li>
+          <li>Sumar 3–5 creativos nuevos cada 2 semanas para evitar la fatiga.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>KPIs que miramos</h4>
+        <ul>
+          <li><strong>Costo por conversación</strong> de WhatsApp.</li>
+          <li><strong>Conversación → clase de prueba</strong> (meta: 30%+).</li>
+          <li><strong>Clase de prueba → alumno</strong> (meta: 50%+).</li>
+          <li><strong>Costo por alumno nuevo</strong> vs. su valor: un alumno grupal 2x que se queda 6 meses deja ~$360.000.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout mt-s">
+      <h4>Convención de nombres</h4>
+      <p class="muted" style="margin:0">Cada anuncio se nombra <code style="color:var(--text)">VB_[persona]_[dolor]_[creativo]_[formato]_[ángulo]</code>, por ejemplo <code style="color:var(--text)">VB_P2_D1_C10_VID_PS</code>. Así, en el administrador de anuncios se ve al instante qué perfil, qué dolor y qué ángulo están funcionando.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAS + CREATIVOS -->
+<section id="personas">
+  <div class="wrap">
+    <span class="eyebrow">06 · Estructura de creativos</span>
+    <h2>5 perfiles · 12 dolores · 36 creativos</h2>
+    <p class="lead">Dentro de cada dolor, los 3 creativos usan formatos y ángulos distintos, y el tono se adapta a cada perfil. Están listos para pasar a guion y grabarse en la jornada trimestral.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filtrar por perfil"></div>
+    <div id="persona-list"></div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section id="mapa">
+  <div class="wrap">
+    <span class="eyebrow">07 · Mapa de producción</span>
+    <h2>Persona × dolor × formato × ángulo</h2>
+    <p class="lead">La tabla para llevar al rodaje y al administrador de anuncios.</p>
+    <div class="counts" id="counts"></div>
+    <div class="table-wrap">
+      <table class="map">
+        <thead><tr><th>#</th><th>Persona</th><th>Dolor</th><th>Formato</th><th>Ángulo</th><th>Sede</th><th>Ola</th><th>Nombre del anuncio</th></tr></thead>
+        <tbody id="map-body"></tbody>
+      </table>
+    </div>
+    <div class="callout warn mt-s">
+      <h4>Reglas de producción</h4>
+      <ul>
+        <li><strong>Casting = segmentación</strong>: quien aparece en el anuncio tiene que parecerse al perfil al que le habla.</li>
+        <li>Primer frame distinto en cada pieza. Subtítulos siempre. Video en 9:16; imagen y carrusel en 4:5.</li>
+        <li>Testimonios y cifras, solo si son reales y con permiso del alumno.</li>
+        <li>Los creativos de urgencia ("pocos cupos", "grupo nuevo") se publican solo cuando la limitación es real.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ETAPAS -->
+<section id="etapas">
+  <div class="wrap">
+    <span class="eyebrow">08 · Cómo lo hacemos</span>
+    <h2>Primeros 90 días</h2>
+    <div class="grid g2 mt">
+      <ol class="tl">
+        <li><h4>Semanas 1–2 · Base</h4><p>Reunión de arranque, accesos (Meta Business, Instagram, dominio), WhatsApp Business con mensajes rápidos, Pixel + API de Conversiones y Google Business Profile.</p></li>
+        <li><h4>Semanas 2–4 · Producción</h4><p>Guiones a partir del mapa, jornada de grabación #1 (Los Robles + El Recodo), edición de la ola 1 y desarrollo de la landing nueva con el SEO técnico.</p></li>
+        <li><h4>Mes 2 · Lanzamiento</h4><p>Landing online, campañas A y B con la ola 1, ola 2 en la semana 3 y pedido de reseñas en Google a los alumnos actuales.</p></li>
+        <li><h4>Mes 3 · Optimización</h4><p>Ola 3, escalar los ganadores, informe de resultados (costo por alumno nuevo) y planificación de la grabación del trimestre 2 con los aprendizajes.</p></li>
+      </ol>
+      <div>
+        <div class="callout">
+          <h4>Lo que necesitamos de Emi</h4>
+          <ul>
+            <li>Logo en alta calidad (SVG o PNG) y colores oficiales.</li>
+            <li>Días y horarios de cada grupo, y cupo máximo por grupo.</li>
+            <li>Confirmar si hay <strong>clase de prueba gratis</strong>. Si no la hay, recomendamos crearla: es la palanca de conversión más fuerte para estos anuncios.</li>
+            <li>3–5 alumnos dispuestos a grabar su testimonio.</li>
+            <li>Presupuesto mensual para pauta (sugerido para empezar: el equivalente a USD 8–12 por día).</li>
+            <li>Acceso administrador a Instagram, Facebook y el dominio.</li>
+          </ul>
+        </div>
+        <div class="callout warn mt-s">
+          <h4>Supuestos de esta propuesta</h4>
+          <ul>
+            <li>Los radios geográficos, la clase de prueba y el "Desafío Muscle Up" (P3) son propuestas a validar.</li>
+            <li>Las cifras de testimonios en los creativos son ejemplos: se reemplazan por historias reales.</li>
+            <li>Los precios son los vigentes a octubre de 2026.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="logo"><span class="logo-slot"></span><b>V<span>BALANCE</span></b></div>
+    <div>Propuesta preparada por <strong style="color:var(--text)">Sofi Audiovisual</strong> · <a href="https://fotografia-git-sitio-2-sofi-audiovisual.vercel.app">ver portfolio</a></div>
+  </div>
+</footer>
+
+<script>
+const PERSONAS = [
+  {
+    id:"P1", initials:"M", name:"Martín · el profesional sin tiempo", sede:"Los Robles · grupal",
+    tags:["30–45 años","Trabaja en oficina o desde casa","Vive cerca de Los Robles"],
+    perfil:"Trabaja 9–10 horas por día, muchas veces sentado. Tiene familia y agenda llena. Pagó el gym varias veces y lo dejó.",
+    importa:"Su salud, tener energía al final del día, dar el ejemplo en casa y no perder tiempo en traslados.",
+    desea:"Entrenar 2–3 veces por semana cerca de casa, sin tener que pensar qué hacer, y sentirse con energía.",
+    pains:[
+      {t:"No tiene tiempo y siempre abandona", d:"Un horario fijo con alguien que lo espera, para que la constancia deje de depender de su fuerza de voluntad.", c:[
+        {f:"Video corto", a:"Problema-solución", h:"(POV en el auto, saliendo del trabajo) Texto: \"Pagaste el gym en marzo. Fuiste 4 veces.\"", m:"En Los Robles la clase tiene horario fijo, un coach que te espera y un grupo que nota si faltás. Una hora, cerca de casa, y listo.", cta:"Escribinos por WhatsApp y reservá tu clase de prueba."},
+        {f:"Imagen", a:"Urgencia", h:"Agenda semanal toda gris con 2 bloques azules: \"2 horas por semana. Es todo lo que te pedimos.\"", m:"Grupal 2x semana a $60.000/mes, en grupos reducidos para que el coach corrija a cada uno. Los cupos por grupo son limitados.", cta:"Reservá tu lugar antes de que se llene el grupo."},
+        {f:"UGC", a:"Testimonial", h:"Alumno a cámara, transpirado, en la plaza: \"Yo era el que abandonaba todo al mes.\"", m:"Cuenta cuántos meses lleva y por qué esta vez sí: horario fijo, grupo que lo arrastra y un coach que lo conoce por su nombre.", cta:"Vení a probar una clase."}
+      ]},
+      {t:"Dolor de espalda por estar sentado", d:"Moverse sin molestias y corregir la postura sin terminar en el kinesiólogo.", c:[
+        {f:"Carrusel", a:"Educativo", h:"Slide 1: \"3 señales de que tu silla te está ganando\"", m:"Hombros adelante, espalda baja cargada, no llegás al piso con las manos → 3 ejercicios de calistenia que lo revierten (colgarse de la barra, retracción escapular, movilidad). Así arrancan las clases en Los Robles.", cta:"Guardalo y escribinos para tu primera clase."},
+        {f:"Video corto", a:"Comparación", h:"Pantalla dividida: 9 horas en la silla / colgado de la barra al aire libre. \"Tu día: 9 h así. Tu cuerpo pide 1 h así.\"", m:"La calistenia trabaja espalda, postura y core con tu propio peso, guiada y adaptada a tu nivel.", cta:"Reservá tu clase de prueba."},
+        {f:"Imagen", a:"Testimonial", h:"Foto de un alumno sonriendo en la barra, con la cita: \"Me dolía la espalda hasta para atarme los cordones.\"", m:"Resultados reales con una progresión adaptada desde la primera clase. Sin experiencia previa.", cta:"Empezá esta semana: escribinos."}
+      ]},
+      {t:"El gym lo aburre", d:"Un entrenamiento que tenga ganas de hacer: al aire libre, variado y con gente.", c:[
+        {f:"UGC", a:"Comparación", h:"Grabado con el celular: \"Cambié la cinta del gym por esto\" + paneo del grupo al atardecer.", m:"Sin máquinas ni espejos: al aire libre, con gente de la zona y un objetivo nuevo cada semana.", cta:"Probá una clase grupal en Los Robles."},
+        {f:"Carrusel", a:"Problema-solución", h:"Slide 1: \"Si el gym te aburre, el problema no sos vos.\"", m:"Rutina siempre igual, entrenar solo, sin un objetivo → en VBalance cada clase es distinta, entrenás en grupo y vas por objetivos concretos (la primera dominada, la vertical).", cta:"Escribinos \"QUIERO PROBAR\"."},
+        {f:"Video corto", a:"Educativo", h:"\"Qué es la calistenia, en 15 segundos\". Montaje rápido de movimientos.", m:"Entrenar con tu propio peso: fuerza, movilidad y control. Se empieza desde cero y cada uno avanza a su ritmo.", cta:"Reservá tu clase de prueba."}
+      ]}
+    ]
+  },
+  {
+    id:"P2", initials:"L", name:"Lucía · quiere sentirse fuerte", sede:"Los Robles · grupal",
+    tags:["25–42 años","Probó pilates, funcional y gym","Busca un espacio cómodo"],
+    perfil:"Trabaja y tiene la semana organizada. Probó varias actividades y ninguna la enganchó. Ve calistenia en redes y piensa que no es para ella.",
+    importa:"Sentirse bien con su cuerpo, un ambiente donde no la juzguen y ver progreso de verdad.",
+    desea:"Tonificar, ganar fuerza real y lograr cosas que creía imposibles, como su primera dominada.",
+    pains:[
+      {t:"\"No puedo ni una dominada\": siente que no es para ella", d:"Saber que puede empezar desde cero, en un grupo que la acompaña.", c:[
+        {f:"Video corto", a:"Problema-solución", h:"Texto sobre una alumna intentando: \"No podía hacer ni una dominada.\" → corte → la hace.", m:"Nadie arranca sabiendo. Desde la primera clase trabajamos con bandas y progresiones adaptadas a tu nivel.", cta:"Tu primera clase es de prueba: escribinos."},
+        {f:"Carrusel", a:"Educativo", h:"Slide 1: \"Tu camino a la primera dominada, en 4 etapas.\"", m:"Colgarte → negativas → con banda → la primera. Así lo trabajamos en clase, con cada alumna.", cta:"Guardalo y vení a arrancar la etapa 1."},
+        {f:"UGC", a:"Testimonial", h:"Alumna a cámara: \"Yo pensaba que la calistenia era solo para chicos musculosos…\"", m:"Cuenta cómo fue su primera clase, cómo la recibió el grupo y qué logró en pocos meses.", cta:"Animate a la clase de prueba."}
+      ]},
+      {t:"Entrena y no ve resultados", d:"Que el esfuerzo se note, con alguien que la corrija y la haga progresar.", c:[
+        {f:"Imagen", a:"Comparación", h:"Dos columnas: \"Clase genérica: 30 personas, nadie te corrige\" / \"VBalance: grupo reducido, el coach te ve.\"", m:"Grupos chicos en Los Robles, con corrección técnica personalizada dentro de la clase grupal. Desde $40.000/mes.", cta:"Conocé el grupo de Los Robles."},
+        {f:"Video corto", a:"Educativo", h:"Emi a cámara: \"Por qué no te tonificás aunque entrenes todos los días.\"", m:"Explica por qué la fuerza progresiva rinde más que el cardio sin fin, y cómo lo aplica en sus clases.", cta:"Escribinos y reservá tu clase."},
+        {f:"UGC", a:"Urgencia", h:"Alumna en la plaza: \"Si querés llegar fuerte al verano, es ahora.\"", m:"8 semanas de entrenamiento constante ya se notan en el espejo y en la energía. Los grupos tienen cupo.", cta:"Reservá antes de que se llene el grupo."}
+      ]}
+    ]
+  },
+  {
+    id:"P3", initials:"T", name:"Tomi · va por las skills", sede:"Los Robles · grupal",
+    tags:["18–30 años","Estudiante o profesional joven","Entrena solo o en el gym"],
+    perfil:"Consume contenido de calistenia, intenta skills mirando YouTube y se frustra. Le gusta mostrar sus logros.",
+    importa:"Progresar, tener un físico atlético y funcional, logros que se puedan mostrar y un grupo con quien entrenar.",
+    desea:"Muscle up, vertical, front lever: dominar su cuerpo de verdad.",
+    pains:[
+      {t:"Estancado en el gym", d:"Volver a sentir que progresa, con metas nuevas y medibles.", c:[
+        {f:"Video corto", a:"Comparación", h:"Texto: \"Levantás más peso cada mes. ¿Pero podés levantar tu cuerpo?\" + corte a un muscle up.", m:"Fuerza relativa, control y skills: el siguiente nivel después de las pesas.", cta:"Vení a medirte en una clase de prueba."},
+        {f:"Imagen", a:"Urgencia", h:"Gráfica bold: \"DESAFÍO MUSCLE UP · 12 semanas · cupos limitados\"", m:"Progresión grupal guiada en Los Robles, 3x semana a $75.000/mes. Arranca con fecha fija.", cta:"Anotate al desafío por WhatsApp."},
+        {f:"UGC", a:"Testimonial", h:"Alumno filmándose: \"Hace 4 meses no hacía 5 dominadas. Mirá esto.\" → su primer muscle up.", m:"Lo logró con un plan, técnica corregida y el grupo empujando.", cta:"Empezá tu progresión."}
+      ]},
+      {t:"Aprende solo con videos y se lesiona", d:"Técnica correcta y progresiones seguras, sin dolores de hombro ni de muñeca.", c:[
+        {f:"Carrusel", a:"Educativo", h:"Slide 1: \"5 errores que te frenan la primera vertical (y cómo corregirlos).\"", m:"Errores frecuentes con su corrección. Al final: \"En clase te los corregimos en vivo.\"", cta:"Guardalo y vení a que te veamos en vivo."},
+        {f:"Video corto", a:"Problema-solución", h:"Primer plano de alguien tomándose el hombro: \"Si te duele el hombro después de entrenar, mirá esto.\"", m:"El problema casi nunca es la fuerza, es la progresión. Un coach que te ve ajusta la técnica antes de que te lastimes.", cta:"Reservá tu clase de prueba."},
+        {f:"Imagen", a:"Comparación", h:"\"Tutorial de YouTube\" (pantalla) vs. \"Coach corrigiéndote en vivo\" (foto en Los Robles).", m:"El video no te ve. Emi sí.", cta:"Escribinos y probá una clase."}
+      ]},
+      {t:"Entrena solo y le falta motivación", d:"Una comunidad que lo empuje y con la que tenga ganas de entrenar.", c:[
+        {f:"UGC", a:"Problema-solución", h:"\"Entrenar solo es aburrido. Esto es un martes en Los Robles.\" + caos lindo del grupo.", m:"Gente de tu edad, desafíos entre todos, música y buena energía. Venís por el entrenamiento y te quedás por el grupo.", cta:"Sumate a una clase de prueba."},
+        {f:"Video corto", a:"Testimonial", h:"\"Le preguntamos al grupo por qué vuelve cada semana.\" Respuestas rápidas, una palabra cada uno.", m:"La comunidad es el motor: constancia, amigos y progreso.", cta:"Vení a conocer al grupo."},
+        {f:"Carrusel", a:"Comparación", h:"Slide 1: \"Entrenar solo vs. entrenar en grupo.\"", m:"Constancia, intensidad, técnica y diversión, comparadas lado a lado. Cierre con foto grupal.", cta:"Escribinos \"GRUPO\" y te pasamos horarios."}
+      ]}
+    ]
+  },
+  {
+    id:"P4", initials:"R", name:"Roberto y Graciela · moverse sin dolor", sede:"El Recodo · semipersonalizado",
+    tags:["45–62 años","Activos, con algún dolor","Valoran la atención cercana"],
+    perfil:"Trabajan o están cerca de jubilarse. Notan que pierden fuerza y movilidad, y quieren cuidarse sin arriesgar.",
+    importa:"Su salud, la independencia, no lastimarse y que alguien los conozca y los cuide.",
+    desea:"Fuerza y movilidad para su día a día: viajar, jugar con los nietos y hacer deporte sin dolor.",
+    pains:[
+      {t:"Miedo a lastimarse", d:"Entrenar con seguridad, con alguien que adapte cada ejercicio.", c:[
+        {f:"Video corto", a:"Educativo", h:"Texto: \"¿Calistenia a los 55? Sí. Así se empieza.\"", m:"Ejercicios adaptados y progresión gradual, en grupos chicos o semipersonalizados, con rutina incluida.", cta:"Consultá por tu evaluación inicial."},
+        {f:"UGC", a:"Testimonial", h:"Alumno de 58 a cámara: \"Pensé que a mi edad ya no podía empezar algo así.\"", m:"Cuenta cómo se siente hoy: más fuerte, más ágil y sin miedo.", cta:"Escribinos y empezá a tu ritmo."},
+        {f:"Imagen", a:"Problema-solución", h:"Foto de Emi asistiendo a un alumno: \"Entrenar no debería doler.\"", m:"En El Recodo cada sesión se adapta a tu cuerpo y a tu historia. Semipersonalizado desde $13.000 la clase.", cta:"Reservá tu primera sesión."}
+      ]},
+      {t:"Perdió fuerza y movilidad", d:"Recuperar soltura y fuerza para sentirse joven por más tiempo.", c:[
+        {f:"Carrusel", a:"Comparación", h:"Slide 1: \"Después de los 40, el músculo se pierde si no lo usás.\"", m:"Qué pasa si no entrenás vs. si entrenás fuerza 2 veces por semana (equilibrio, huesos, energía).", cta:"Escribinos para empezar."},
+        {f:"Video corto", a:"Problema-solución", h:"\"¿Podés levantarte del piso sin apoyar las manos?\" Test en cámara.", m:"Si te costó, es una señal. Lo trabajamos con movilidad y fuerza guiada.", cta:"Reservá tu evaluación."},
+        {f:"Imagen", a:"Urgencia", h:"\"El mejor momento para empezar fue hace 10 años. El segundo, esta semana.\"", m:"Planes de 1, 2 o 3 veces por semana en El Recodo, con rutina incluida.", cta:"Empezá esta semana."}
+      ]}
+    ]
+  },
+  {
+    id:"P5", initials:"E", name:"Esteban · el ejecutivo que quiere resultados", sede:"El Recodo · personalizado",
+    tags:["35–55 años","Ingresos altos, agenda cambiante","Vive en barrios de la zona"],
+    perfil:"Dueño de empresa o gerente. Tiene reloj inteligente, apps y suscripciones, pero no la constancia. Le cuesta comprometerse con horarios fijos de grupo.",
+    importa:"La eficiencia, los resultados medibles, la atención exclusiva y la privacidad.",
+    desea:"Un plan hecho para él, un coach que lo empuje y horarios que se acomoden a su semana.",
+    pains:[
+      {t:"Su agenda no le permite horarios de grupo", d:"Un entrenamiento que se adapte a su semana, y no al revés.", c:[
+        {f:"Imagen", a:"Problema-solución", h:"\"Tu agenda cambia. Tu entrenamiento se adapta.\"", m:"Personalizado en El Recodo, coordinado semana a semana. Rutina incluida.", cta:"Coordiná tu primera sesión por WhatsApp."},
+        {f:"Video corto", a:"Testimonial", h:"Alumno saliendo de una sesión: \"Viajo dos veces al mes y no dejé de entrenar.\"", m:"Sesiones presenciales más la rutina para entrenar solo cuando viaja.", cta:"Consultá disponibilidad."},
+        {f:"Carrusel", a:"Urgencia", h:"Slide 1: \"Emi toma pocos personalizados por semana.\"", m:"Un solo coach, cupo real limitado. Precios: 1x $15k, 2x $14k, 3x $13k por clase.", cta:"Escribinos para saber qué horarios quedan."}
+      ]},
+      {t:"Rutinas genéricas que no sostiene", d:"Un plan a medida y alguien que le pida cuentas.", c:[
+        {f:"UGC", a:"Educativo", h:"Emi, estilo POV: \"Lo primero que hago con un alumno nuevo.\"", m:"Evaluación, objetivos y plan: muestra el proceso de inicio del personalizado.", cta:"Agendá tu evaluación."},
+        {f:"Video corto", a:"Problema-solución", h:"\"Tenés app, reloj y suscripción. Te falta alguien que te espere.\"", m:"El coach es el compromiso que ninguna app te da. Resultados medibles cada mes.", cta:"Escribinos y arrancá."},
+        {f:"Imagen", a:"Comparación", h:"\"Rutina de internet\" vs. \"Rutina VBalance hecha para vos (incluida).\"", m:"Tu cuerpo, tus objetivos, tu horario. Nada genérico.", cta:"Reservá tu primera sesión."}
+      ]}
+    ]
+  }
+];
+
+const FMT = {"Video corto":["video","VID"],"Imagen":["imagen","IMG"],"Carrusel":["carrusel","CAR"],"UGC":["ugc","UGC"]};
+const ANG = {"Problema-solución":"PS","Testimonial":"TES","Educativo":"EDU","Comparación":"CMP","Urgencia":"URG"};
+
+// waves: first creative of each pain = ola 1, second = ola 2, third = ola 3
+let n = 0;
+const rows = [];
+PERSONAS.forEach(p => p.pains.forEach((pain, di) => pain.c.forEach((c, ci) => {
+  n++;
+  c.n = n;
+  c.code = `VB_${p.id}_D${di+1}_C${String(n).padStart(2,"0")}_${FMT[c.f][1]}_${ANG[c.a]}`;
+  rows.push({p, pain, di, c, ola: ci + 1});
+})));
+
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+function renderPersonas(filter){
+  const list = document.getElementById("persona-list");
+  list.innerHTML = PERSONAS.filter(p => filter === "all" || p.id === filter).map(p => `
+    <article class="persona">
+      <div class="persona-head">
+        <div class="avatar">${p.id}</div>
+        <div>
+          <span class="eyebrow" style="margin-bottom:8px">Buyer persona ${p.id} · ${esc(p.sede)}</span>
+          <h3>${esc(p.name)}</h3>
+          <div class="tags">${p.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+          <div class="pfields">
+            <div><b>Perfil</b><span>${esc(p.perfil)}</span></div>
+            <div><b>Qué le importa</b><span>${esc(p.importa)}</span></div>
+            <div><b>Lo que desea</b><span>${esc(p.desea)}</span></div>
+          </div>
+        </div>
+      </div>
+      ${p.pains.map((pain, di) => `
+        <div class="pain">
+          <div class="pain-title"><span class="code">${p.id} · DOLOR ${di+1}</span><h4>${esc(pain.t)}</h4></div>
+          <p class="desire"><strong>Lo que desea:</strong> ${esc(pain.d)}</p>
+          <div class="creatives">
+            ${pain.c.map(c => `
+              <div class="cr">
+                <div class="cr-top"><strong>CREATIVO ${c.n}</strong><span class="tag fmt-${FMT[c.f][0]}">${c.f}</span></div>
+                <div class="row"><b>Ángulo</b>${c.a}</div>
+                <div class="row"><b>Hook · 3 segundos</b><span class="hook">${esc(c.h)}</span></div>
+                <div class="row"><b>Mensaje central</b><span class="muted">${esc(c.m)}</span></div>
+                <div class="cta">→ ${esc(c.cta)}</div>
+              </div>`).join("")}
+          </div>
+        </div>`).join("")}
+    </article>`).join("");
+}
+
+function renderFilters(){
+  const el = document.getElementById("filters");
+  const opts = [["all","Todos"], ...PERSONAS.map(p => [p.id, `${p.id} · ${p.name.split(" · ")[0]}`])];
+  el.innerHTML = opts.map(([id, label], i) => `<button type="button" data-id="${id}" aria-pressed="${i === 0}">${esc(label)}</button>`).join("");
+  el.addEventListener("click", e => {
+    const b = e.target.closest("button"); if (!b) return;
+    el.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x === b));
+    renderPersonas(b.dataset.id);
+  });
+}
+
+function renderMap(){
+  document.getElementById("map-body").innerHTML = rows.map(r => `
+    <tr>
+      <td class="id">${r.c.n}</td>
+      <td>${r.p.id} · ${esc(r.p.name.split(" · ")[0])}</td>
+      <td>${esc(r.pain.t)}</td>
+      <td><span class="tag fmt-${FMT[r.c.f][0]}">${r.c.f}</span></td>
+      <td>${r.c.a}</td>
+      <td>${esc(r.p.sede.split(" · ")[0])}</td>
+      <td>${r.ola}</td>
+      <td class="code">${r.c.code}</td>
+    </tr>`).join("");
+  const count = k => rows.filter(r => r.c.f === k).length;
+  document.getElementById("counts").innerHTML = Object.keys(FMT).map(k => `
+    <div class="card"><div class="num">${count(k)}</div><span class="muted">${k}</span></div>`).join("");
+}
+
+document.querySelectorAll(".logo-slot").forEach(s => s.appendChild(document.getElementById("logo-mark").content.cloneNode(true)));
+document.querySelector(".logo-slot.big svg")?.setAttribute("width","48");
+document.querySelector(".logo-slot.big svg")?.setAttribute("height","48");
+renderFilters();
+renderPersonas("all");
+renderMap();
+</script>
+</body>
+</html>
