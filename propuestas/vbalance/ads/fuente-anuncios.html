@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#3a3fca;--black:#000;--white:#fff}
+  *{box-sizing:border-box;margin:0}
+  body{background:#888;font-family:"Chakra Petch",sans-serif;padding:20px;display:flex;flex-direction:column;gap:20px}
+  .ad{width:1080px;height:1350px;position:relative;overflow:hidden;background:var(--blue);color:#fff}
+  .ad img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .h{font-weight:700;font-style:italic;text-transform:uppercase;line-height:.95;letter-spacing:-.01em}
+  .rule{display:flex;justify-content:space-between;font-size:20px;border-top:2px solid currentColor;padding-top:10px}
+  .cta{display:inline-flex;align-items:center;gap:16px;background:#000;color:#fff;font-weight:700;font-size:34px;text-transform:uppercase;padding:22px 34px;border-radius:8px}
+  .cta.light{background:#fff;color:#000}
+  .chip{display:inline-block;font-weight:600;font-size:24px;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border-radius:6px}
+
+  /* AD 1 · C2 · P1 El Recodo semi */
+  #ad1 .top{position:absolute;left:0;right:0;top:0;height:700px}
+  #ad1 .top img{object-position:50% 60%}
+  #ad1 .top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 30%)}
+  #ad1 .logo{position:absolute;top:48px;left:60px;height:84px;z-index:2}
+  #ad1 .week{position:absolute;left:60px;right:60px;top:627px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;z-index:2}
+  #ad1 .day{background:#fff;color:#000;border-radius:8px;padding:14px 14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  #ad1 .day b{display:block;font-size:22px;letter-spacing:.1em;margin-bottom:10px}
+  #ad1 .slot{height:34px;border-radius:5px;background:#e3e4ef;margin-top:8px;font-size:18px;font-weight:600;display:flex;align-items:center;padding-left:10px;color:#9a9db4}
+  #ad1 .slot.on{background:var(--blue);color:#fff}
+  #ad1 .bottom{position:absolute;left:60px;right:60px;top:815px}
+  #ad1 .bottom .h{font-size:132px;text-transform:none}
+  #ad1 .bottom .sub{font-size:44px;font-weight:600;font-style:italic;text-transform:uppercase;color:#000;margin-top:14px}
+  #ad1 .bottom p{font-size:30px;line-height:1.35;margin-top:24px;max-width:900px}
+  #ad1 .foot{position:absolute;left:60px;right:60px;bottom:56px;display:flex;justify-content:space-between;align-items:center}
+  #ad1 .foot .sym{height:96px}
+
+  /* AD 2 · C27 · P4 +45 El Recodo */
+  #ad2 img.photo{object-position:40% 60%;filter:grayscale(1) contrast(1.08);height:62%;bottom:auto}
+  #ad2::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 16%,rgba(58,63,202,.1) 35%,rgba(58,63,202,.85) 54%,var(--blue) 62%,var(--blue) 100%);z-index:1}
+  #ad2 .in{position:absolute;inset:56px 60px;z-index:2;display:flex;flex-direction:column}
+  #ad2 .logo{height:80px;align-self:flex-start}
+  #ad2 .chip{background:#000;color:#fff;margin-top:auto;align-self:flex-start}
+  #ad2 .h{font-size:104px;margin-top:20px}
+  #ad2 .h span{color:#000}
+  #ad2 p{font-size:28px;line-height:1.35;margin-top:18px;max-width:900px}
+  #ad2 blockquote{margin-top:20px;border-left:6px solid #000;padding-left:22px;font-size:24px;font-style:italic;line-height:1.35;max-width:900px}
+  #ad2 blockquote small{display:block;font-style:normal;font-size:22px;margin-top:8px;opacity:.85}
+  #ad2 .row{display:flex;justify-content:space-between;align-items:center;margin-top:26px}
+
+  /* AD 3 · C13 · P2 Los Robles (grupal, atención personalizada) */
+  #ad3 img.photo{height:62%;bottom:auto;object-position:50% 56%}
+  #ad3::before{content:"";position:absolute;left:0;right:0;top:0;height:62%;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 30%);z-index:1}
+  #ad3 .logo{position:absolute;top:52px;left:60px;height:76px;z-index:2}
+  #ad3 .chips{position:absolute;top:60px;right:60px;z-index:2;display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+  #ad3 .chips .chip{background:#fff;color:#000}
+  #ad3 .copy{position:absolute;left:60px;right:60px;bottom:56px;z-index:2}
+  #ad3 .copy .h{font-size:68px}
+  #ad3 .copy .h span{color:#000}
+  #ad3 .copy p{font-size:28px;line-height:1.35;margin-top:16px;max-width:900px}
+  #ad3 .copy .row{display:flex;justify-content:space-between;align-items:center;margin-top:26px}
+  #ad3 .copy .row b{font-size:26px;font-weight:600;color:#000;text-align:right;line-height:1.3}
+</style>
+</head>
+<body>
+
+<!-- AD 1 -->
+<div class="ad" id="ad1">
+  <div class="top"><img class="photo" src="vbphotos/grupo.jpg" alt=""></div>
+  <img class="logo" src="/home/user/docs-examples/propuestas/vbalance/marca/logo-blanco.png" alt="VBalance">
+  <div class="week">
+    <div class="day"><b>LUN</b><div class="slot on">8h</div><div class="slot on">17h</div></div>
+    <div class="day"><b>MAR</b><div class="slot on">8h</div><div class="slot on">17h</div></div>
+    <div class="day"><b>MIÉ</b><div class="slot on">8h</div><div class="slot on">17h</div></div>
+    <div class="day"><b>JUE</b><div class="slot on">8h</div><div class="slot on">17h</div></div>
+    <div class="day"><b>VIE</b><div class="slot on">8h</div><div class="slot on">17h</div></div>
+  </div>
+  <div class="bottom">
+    <div class="h">8h o 17h.</div>
+    <div class="sub">Antes o después del trabajo.</div>
+    <p>Semipersonalizado en El Recodo: hasta 10 personas, cada una con su propia rutina. Desde $13.000 la clase.</p>
+  </div>
+  <div class="foot">
+    <span class="cta">Reservá tu clase gratis →</span>
+    <img class="sym" src="/home/user/docs-examples/propuestas/vbalance/marca/simbolo-negro.png" alt="">
+  </div>
+</div>
+
+<!-- AD 2 -->
+<div class="ad" id="ad2">
+  <img class="photo" src="vbphotos/plancha.jpg" alt="">
+  <div class="in">
+    <img class="logo" src="/home/user/docs-examples/propuestas/vbalance/marca/logo-blanco.png" alt="VBalance">
+    <span class="chip">+45 · El Recodo · Pilar</span>
+    <div class="h">Entrenar no<br>debería <span>doler.</span></div>
+    <p>Cada sesión se adapta a tu cuerpo y a tu historia. Semipersonalizado con rutina incluida.</p>
+    <blockquote>“VBalance a mis 60 años me ayudó a progresar de forma consciente, cuidada y sin dolores.”<small>— Alumno de VBalance</small></blockquote>
+    <div class="row">
+      <span class="cta">Primera clase gratis →</span>
+    </div>
+  </div>
+</div>
+
+<!-- AD 3 -->
+<div class="ad" id="ad3">
+  <img class="photo" src="vbphotos/alumna.jpg" alt="">
+  <img class="logo" src="/home/user/docs-examples/propuestas/vbalance/marca/logo-blanco.png" alt="VBalance">
+  <div class="chips"><span class="chip">Máximo 15 por grupo</span><span class="chip">Todos los niveles</span></div>
+  <div class="copy">
+    <div class="h">Clase grupal,<br><span>atención personalizada.</span></div>
+    <p>El coach te ve y te corrige en cada ejercicio. Grupal en Los Robles, desde $40.000/mes.</p>
+    <div class="row">
+      <span class="cta">Probá una clase gratis →</span>
+      <b>Lun · Mié · Vie<br>19 h</b>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
