@@ -70,15 +70,16 @@
   @media (max-width:760px){.nav ul{display:none}}
 
   /* hero */
-  .hero{position:relative;padding:72px 0 88px;overflow:hidden}
-  .hero .eb-rule{display:grid;grid-template-columns:1fr 2fr auto;gap:16px;font:400 11px/1 var(--body);padding-top:8px;border-top:1px solid #000;color:#000;margin-bottom:56px}
-  .hero-logo img{display:block;width:min(560px,82vw);height:auto;margin-bottom:56px}
-  .hero-sello{position:absolute;right:max(16px,calc((100vw - 1120px)/2 + 16px));top:150px;width:210px;opacity:.95}
+  .hero{position:relative;min-height:calc(100vh - 60px);padding:40px 0 48px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;text-align:center}
+  .hero .wrap{width:100%}
+  .hero .eb-rule{display:grid;grid-template-columns:1fr 2fr auto;gap:16px;font:400 11px/1 var(--body);padding-top:8px;border-top:1px solid #000;color:#000;margin-bottom:clamp(20px,4vh,40px);text-align:left}
+  .hero-logo img{display:block;width:min(300px,60vw);height:auto;margin:0 auto clamp(18px,4vh,36px)}
+  .hero-sello{position:absolute;right:max(16px,calc((100vw - 1120px)/2 + 16px));top:190px;width:110px;opacity:.95}
   @media (max-width:900px){.hero-sello{display:none}}
-  .hero h1{font-size:clamp(44px,8vw,100px);max-width:920px;color:#fff}
+  .hero h1{font-size:clamp(36px,min(6.4vw,8.5vh),84px);max-width:1000px;margin:0 auto;color:#fff}
   .hero h1 em{font-style:italic;color:#000}
-  .hero .lead{color:rgba(255,255,255,.9)}
-  .hero .meta{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:40px;color:rgba(255,255,255,.88);font-size:14px;border-top:1px solid #000;padding-top:16px;max-width:920px}
+  .hero .lead{color:rgba(255,255,255,.9);margin-left:auto;margin-right:auto}
+  .hero .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 36px;margin:clamp(20px,4vh,36px) auto 0;color:rgba(255,255,255,.88);font-size:14px;border-top:1px solid #000;padding-top:16px;max-width:920px}
   .hero .meta strong{color:#000;display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
 
   /* grids & cards */
@@ -228,7 +229,7 @@
   <div class="wrap">
     <div class="eb-rule"><span>VBalance</span><span>Propuesta de crecimiento</span><span>2026</span></div>
     <div class="hero-logo"><img data-img="logoNegro" alt="VBalance Calisthenics"></div>
-    <span class="eyebrow plain">Propuesta · Octubre 2026</span>
+    <span class="eyebrow plain">Guía de trabajo completa · uso interno · Octubre 2026</span>
     <h1>Más alumnos para la <em>comunidad</em> VBalance</h1>
     <p class="lead">Un plan integral para sumar alumnos semipersonalizados y personalizados en <strong>El Recodo</strong> y llenar los grupos de <strong>Los Robles del Monarca</strong>: contenido trimestral, una landing que convierta, SEO local y una estructura de creativos para Meta Ads pensada para el algoritmo Andromeda.</p>
     <div class="meta">
@@ -365,6 +366,20 @@
         </ul>
         <p class="muted mt-s" style="font-size:13px">Frecuencia sugerida: 3 reels + 1 carrusel por semana, e historias diarias que muestren las clases.</p>
       </div>
+    </div>
+
+    <div class="callout mt-s">
+      <h4>Mejoras para Instagram (orgánico)</h4>
+      <ul>
+        <li><strong>Perfil con palabras clave</strong>: en el nombre, "VBalance · Calistenia en Pilar"; en la bio, "Primera clase gratis", las sedes y el link a WhatsApp o a la landing.</li>
+        <li><strong>Destacadas</strong>: Clase gratis · El Recodo · Los Robles · Precios · Testimonios · Equipo.</li>
+        <li><strong>3 posts fijados</strong>: la primera clase gratis, un testimonio y sedes y horarios.</li>
+        <li><strong>Hook en los primeros 2 segundos</strong>, con texto en pantalla y subtítulos siempre (la mayoría mira sin sonido). Reels de 7 a 30 segundos.</li>
+        <li><strong>SEO dentro de Instagram</strong>: palabras como "calistenia", "Pilar", "entrenamiento" y "clases" en el texto de cada publicación y en el texto alternativo, con la ubicación etiquetada (El Recodo o Los Robles).</li>
+        <li><strong>Colaboraciones</strong>: publicar reels en colaboración con alumnos y coaches, para que aparezcan también en sus perfiles.</li>
+        <li><strong>Reels de prueba</strong> (se muestran primero a gente que no sigue la cuenta): probar hooks gratis antes de pasarlos a anuncios.</li>
+        <li><strong>Palabra clave en comentarios</strong>: "Comentá CLASE y te mandamos los horarios", con respuesta automática por mensaje directo. Las consultas se responden en menos de una hora.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -723,7 +738,7 @@ Vení con ropa negra o azul (o la remera VB si la tenés). ¿Te sumás? Responde
   <div class="wrap">
     <img class="sello" data-img="selloNegro" alt="">
     <div class="logo"><img data-img="logoNegro" alt="VBalance"></div>
-    <div>Propuesta preparada por <strong style="color:var(--text)">Sofi Audiovisual</strong> · <a href="https://fotografia-git-sitio-2-sofi-audiovisual.vercel.app">ver portfolio</a></div>
+    <div>Propuesta preparada por <strong style="color:var(--text)">Sofi Audiovisual</strong> · <a href="https://sofiguevara.com.ar">ver portfolio</a></div>
   </div>
 </footer>
 
@@ -1037,10 +1052,10 @@ const INVERSION = {
   dolar: null,
   meses: ["Noviembre","Diciembre","Enero"],
   etapas: [
-    {id:"contenido", n:"01", nombre:"Contenido", precio:null, unidad:"rodaje del 8/11 · web + campaña + orgánico",
+    {id:"contenido", n:"01", nombre:"Contenido", precio:1200, unidad:"rodaje del 8/11 · web + campaña + orgánico",
      incluye:["Guiones, casting y plan de rodaje","Rodaje del domingo 8/11 en El Recodo + Los Robles","Toda la grilla de contenido (sección 08): edición y diseño incluidos"],
-     pago:"2 cuotas: seña al reservar la fecha (noviembre) y saldo en diciembre.",
-     cuotas:[{mes:1, parte:"1/2 · seña"},{mes:2, parte:"2/2"}]},
+     pago:"3 cuotas de USD 400: seña al reservar la fecha (noviembre), diciembre y enero. Desglose: rodaje USD 300 + edición USD 900 (lista USD 1.550).",
+     cuotas:[{mes:1, parte:"1/3 · seña"},{mes:2, parte:"2/3"},{mes:3, parte:"3/3"}]},
     {id:"web", n:"02", nombre:"Sitio web + SEO", precio:450, unidad:"pago único",
      incluye:["Landing nueva, pensada para el celular, con WhatsApp","SEO técnico, páginas por sede, datos estructurados","Google Business Profile, Pixel + API de Conversiones, GA4"],
      pago:"3 cuotas mensuales, sin interés.",
