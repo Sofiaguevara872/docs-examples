@@ -1,4 +1,4 @@
-"""Presupuesto Identidad Visual - Bengar Calisthenics (Paloma GB).
+"""Presupuesto Logo e Isologo - Bengar Calisthenics (Paloma GB).
 
 Replica el diseño de "Presupuesto_Pack_3_Concerts_Delta_School_2026.pdf".
 La referencia salió de HTML impreso en Chrome (1 px CSS = 0.75 pt), así que las
@@ -189,16 +189,14 @@ ITEMS = [
      ["Conocer la historia de Bengar, su público y hacia dónde quiere crecer.",
       "Relevar referencias visuales, gustos y lo que la marca no quiere transmitir.",
       "Acordar alcance, tiempos y próximos pasos del proyecto."]),
-    ("Identidad visual", None,
-     "Marca · 3 rondas de cambios incluidas",
-     ["Logotipo principal, versiones alternativas e isotipo.",
-      "Paleta de colores y sistema tipográfico para títulos y textos.",
-      "Manual de marca en PDF con usos correctos e incorrectos."]),
+    ("Logo e isologo", None,
+     "Para estampar en remeras · 3 rondas de cambios incluidas",
+     ["Logo de Bengar Calisthenics pensado para estampar en remeras.",
+      "Isologo: símbolo y nombre integrados en una sola pieza."]),
     ("Qué te llevás", None,
      "Entrega digital · Archivos ordenados por carpeta",
-     ["Una marca coherente, lista para usar en redes, el gimnasio y la indumentaria.",
-      "Archivos finales en PNG, JPG, SVG y PDF, más los editables.",
-      "Una guía clara para que cualquier persona aplique la marca sin errores."]),
+     ["Logo e isologo en alta resolución, listos para mandar a estampar.",
+      "Archivos finales en PNG, SVG y PDF."]),
 ]
 
 ROWS = [
@@ -218,12 +216,12 @@ def page1(c):
     # "PRESU" upright + "PUESTO" italic; tracking -0.031 em calibrado para que
     # el ancho total coincida con la referencia (42.52 -> 288.28 pt).
     big_title(c, 154.02, [("PRESU", PK), ("PUESTO", PBI)], 36, cs=-1.121)
-    text(c, ML, 193.67, "IDENTIDAD VISUAL · BENGAR CALISTHENICS", IS, 6.8, white, cs=1.159)
+    text(c, ML, 193.67, "LOGO E ISOLOGO · BENGAR CALISTHENICS", IS, 6.8, white, cs=1.159)
 
     # PARA / REFERENCIA
     for x, label, name, sub in (
         (ML, "PARA", "Bengar Calisthenics", "Paloma GB"),
-        (297.64, "REFERENCIA", "Identidad visual", "Marca"),
+        (297.64, "REFERENCIA", "Logo e isologo", "Para remeras"),
     ):
         text(c, x, 257.90, label, IS, 5.8, GREY_77, cs=1.197)
         text(c, x, 276.52, name, PB, 11, INK)
@@ -375,7 +373,7 @@ def page2(c):
 
 def build(out):
     c = canvas.Canvas(out, pagesize=A4, initialFontName=IR, initialFontSize=10)
-    c.setTitle("Presupuesto Identidad Visual - Bengar Calisthenics")
+    c.setTitle("Presupuesto Logo e Isologo - Bengar Calisthenics")
     c.setAuthor("Sofía Guevara")
     page1(c)
     c.showPage()
@@ -386,4 +384,4 @@ def build(out):
 
 if __name__ == "__main__":
     build(sys.argv[1] if len(sys.argv) > 1 else
-          os.path.join(HERE, "Presupuesto_Identidad_Visual_Bengar_Calisthenics_2026.pdf"))
+          os.path.join(HERE, "Presupuesto_Logo_Isologo_Bengar_Calisthenics_2026.pdf"))
