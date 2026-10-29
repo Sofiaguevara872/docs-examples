@@ -191,7 +191,7 @@ ITEMS = [
       "Acordar alcance, tiempos y próximos pasos del proyecto."]),
     ("Logo e isologo", None,
      "Diseño a medida · 3 rondas de cambios incluidas",
-     ["Logo principal de Bengar Calisthenics, con colores nuevos.",
+     ["Logo principal de Bengar Calisthenics.",
       "Isologo: símbolo y nombre integrados en una sola pieza.",
       "Pensados para funcionar en remeras, redes y todo lo que quieras hacer con la marca."]),
     ("Qué te llevás", None,
