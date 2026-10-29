@@ -185,15 +185,14 @@ VALID = "hasta el 03/11"
 
 ITEMS = [
     ("Primer paso: videollamada inicial", "Incluida",
-     "Antes de arrancar · 45 minutos por Meet o Zoom",
+     "Antes de arrancar · Por Meet o Zoom",
      ["Conocer la historia de Bengar, su público y hacia dónde quiere crecer.",
       "Relevar referencias visuales, gustos y lo que la marca no quiere transmitir.",
       "Acordar alcance, tiempos y próximos pasos del proyecto."]),
     ("Identidad visual", None,
-     "Sistema de marca completo · 3 rondas de cambios incluidas",
+     "Marca · 3 rondas de cambios incluidas",
      ["Logotipo principal, versiones alternativas e isotipo.",
       "Paleta de colores y sistema tipográfico para títulos y textos.",
-      "Aplicaciones para redes: avatar, plantillas de posteos e historias.",
       "Manual de marca en PDF con usos correctos e incorrectos."]),
     ("Qué te llevás", None,
      "Entrega digital · Archivos ordenados por carpeta",
@@ -224,7 +223,7 @@ def page1(c):
     # PARA / REFERENCIA
     for x, label, name, sub in (
         (ML, "PARA", "Bengar Calisthenics", "Paloma GB"),
-        (297.64, "REFERENCIA", "Identidad visual", "Diseño de marca completo"),
+        (297.64, "REFERENCIA", "Identidad visual", "Marca"),
     ):
         text(c, x, 257.90, label, IS, 5.8, GREY_77, cs=1.197)
         text(c, x, 276.52, name, PB, 11, INK)
