@@ -190,12 +190,13 @@ ITEMS = [
       "Relevar referencias visuales, gustos y lo que la marca no quiere transmitir.",
       "Acordar alcance, tiempos y próximos pasos del proyecto."]),
     ("Logo e isologo", None,
-     "Para estampar en remeras · 3 rondas de cambios incluidas",
-     ["Logo de Bengar Calisthenics pensado para estampar en remeras.",
-      "Isologo: símbolo y nombre integrados en una sola pieza."]),
+     "Diseño a medida · 3 rondas de cambios incluidas",
+     ["Logo principal de Bengar Calisthenics, con colores nuevos.",
+      "Isologo: símbolo y nombre integrados en una sola pieza.",
+      "Pensados para funcionar en remeras, redes y todo lo que quieras hacer con la marca."]),
     ("Qué te llevás", None,
      "Entrega digital · Archivos ordenados por carpeta",
-     ["Logo e isologo en alta resolución, listos para mandar a estampar.",
+     ["Logo e isologo en alta resolución, listos para usar donde los necesites.",
       "Archivos finales en PNG, SVG y PDF."]),
 ]
 
@@ -216,16 +217,17 @@ def page1(c):
     # "PRESU" upright + "PUESTO" italic; tracking -0.031 em calibrado para que
     # el ancho total coincida con la referencia (42.52 -> 288.28 pt).
     big_title(c, 154.02, [("PRESU", PK), ("PUESTO", PBI)], 36, cs=-1.121)
-    text(c, ML, 193.67, "LOGO E ISOLOGO · BENGAR CALISTHENICS", IS, 6.8, white, cs=1.159)
+    text(c, ML, 193.67, "LOGO DE MARCA · BENGAR CALISTHENICS", IS, 6.8, white, cs=1.159)
 
     # PARA / REFERENCIA
     for x, label, name, sub in (
         (ML, "PARA", "Bengar Calisthenics", "Paloma GB"),
-        (297.64, "REFERENCIA", "Logo e isologo", "Para remeras"),
+        (297.64, "SERVICIO", "Logo de marca", None),
     ):
         text(c, x, 257.90, label, IS, 5.8, GREY_77, cs=1.197)
         text(c, x, 276.52, name, PB, 11, INK)
-        text(c, x, 290.47, sub, IR, 7.5, GREY_88)
+        if sub:
+            text(c, x, 290.47, sub, IR, 7.5, GREY_88)
     rect(c, ML, 312.12, MR - ML, 2.27, INK)
 
     # Ítems
